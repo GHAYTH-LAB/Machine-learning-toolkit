@@ -18,3 +18,5 @@
 - `pd.Series(data, index=[...])` sets custom index labels.
 - `.loc[index]` selects rows or values by index label.
 - The `Series` constructor uses an uppercase `S`.
+-  to View some exercices and some other implementations non existant in the "master" branch you can visit revision branch via:
+--------------------- git switch revision----------------------- 
