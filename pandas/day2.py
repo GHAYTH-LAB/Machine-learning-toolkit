@@ -18,3 +18,15 @@ print(pd.Series(Dict))
 print(pd.Series(Dict).loc["second"])
 print(pd.Series(Dict).iloc[2])
 print(pd.Series(Dict)[(pd.Series(Dict))<=20])
+#-------------------
+import pandas as pd
+List=[1,"Ghayth",17,"Abidli"]
+List=pd.Series(List,index=["first","second","third","fourth"])
+print(List)
+List.index=[9,8,7,6]
+print(List)
+List.loc[9]=150
+List.iloc[2]=180
+List.iloc[1]=100
+List.iloc[3]=70
+print(List[(List<180) & (List!=150)])
