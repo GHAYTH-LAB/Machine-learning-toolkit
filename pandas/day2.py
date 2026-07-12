@@ -1,5 +1,5 @@
 #day2 of learning pandas
-import pandas as pd
+"""import pandas as pd
 Data=pd.Series(["A","B","C"],index=["index_1","index_2","index_3"])
 #Displaying our Series
 print(Data)
@@ -29,4 +29,9 @@ List.loc[9]=150
 List.iloc[2]=180
 List.iloc[1]=100
 List.iloc[3]=70
-print(List[(List<180) & (List!=150)])
+print(List[(List<180) & (List!=150)])"""
+#--------------------------------------------------
+import pandas as pd
+
+New_Data = pd.Series([10, 7, 15, 5], index=["A", "B", "C", "D"])
+print(New_Data[New_Data < 8])
