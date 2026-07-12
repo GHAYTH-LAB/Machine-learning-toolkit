@@ -41,4 +41,24 @@
 - `Data[condition]` filters the Series, keeping only the items that satisfy the condition inside `[...]` (e.g. `Data[Data != "B"]`).
 - Passing a `dict` into `pd.Series()` automatically uses the dict's **keys as the index** and its **values as the data** — no need to set `index=[...]` manually.
 - `.loc[]`, `.iloc[]`, and filtering with `[...]` all work the same way whether the Series was built from a list or a dict.
-## Day 3 of learning pandas
+## Day 3 of learning pandas:
+***Date:*** July 13 2026
+### What I learned:
+-a `DataFrame` is a two dimentional labled data structure
+-`pd.DataFrame` creates a DataFrame structure 
+-we can acces to a line by `Data.loc(Label_Name)` or by `Data.iloc(index)`
+-we can add `a line` by creating a new line by creating a new `DataFrame` and then use `pd.concat([old DataFrame,New DataFrame])`
+-we can add a column `Data[.......]=......`
+### code:
+![My attempt](assets/pandas/Code_day3.png)
+### Example_output
+![IMPLEMENTATION_Day3](assets/pandas/Implementation_day_3.png)
+
+### Notes / Key takeaways:
+- A `DataFrame` is a two-dimensional table made of rows and columns.
+- `pd.DataFrame(data)` converts a dictionary into a DataFrame.
+- You can rename row labels with `df.index = [...]` to make data access easier.
+- New columns are created by assigning a list to a column name, such as `df["married"] = [...]`.
+- `.loc["label"]` is used to select a row by its index label.
+- To add a new row, create a one-row DataFrame and combine it with the existing one using `pd.concat([df, new_row])`.
+- The new row must include the same column names as the original DataFrame, otherwise missing values will appear as `NaN`.
