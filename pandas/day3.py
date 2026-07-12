@@ -1,4 +1,4 @@
-import pandas as pd
+"""import pandas as pd
 Data={
     "Name":["ghayth","Anass","Talel","Raslen","Ahmed","Dali"]
     ,"age":[20,15,21,19,28,36]
@@ -22,4 +22,22 @@ Data.loc["Ninth_person"]={
     ,"city":"MONASTIR"
     ,"married":1
 }
-print(Data)
+print(Data)"""
+import pandas as pd
+arr={
+    "Name":["Anass","Ghayth","Adem","Yassine"]
+    ,"Age":[15,19,20,25]
+    ,"Favourite_team":["psg","Barca","Barca","Real"]
+}
+new_arr=pd.DataFrame(arr,index=["First_Person","Second-Person","Third_Person","Fourth_Person"])
+print(new_arr)
+print(new_arr.loc["First_Person"])
+print(new_arr["Name"])
+print(new_arr.loc["First_Person","Favourite_team"])
+added_row=pd.DataFrame({
+    "Name":["ALA","raslen"]
+    ,"Age":[37,19]
+    ,"city":["Barcelone","London"]
+    ,"married":[1,0]
+})
+new_arr=pd.concat([new_arr,added_row])
