@@ -31,7 +31,15 @@ List.iloc[1]=100
 List.iloc[3]=70
 print(List[(List<180) & (List!=150)])"""
 #--------------------------------------------------
-import pandas as pd
+"""import pandas as pd
 
 New_Data = pd.Series([10, 7, 15, 5], index=["A", "B", "C", "D"])
-print(New_Data[New_Data < 8])
+print(New_Data[New_Data < 8])"""
+import pandas as pd
+Data=[10,"Ghayth",17,"Abidli",23]
+New_Data=pd.Series(Data,index=[14,18,19,"Abidli","Ghayth"])
+print(New_Data)
+print(New_Data.loc["Ghayth"])
+print(New_Data.iloc[2])
+print("Final output")
+print(New_Data[(New_Data!="Ghayth" )& (New_Data!="Abidli")])
