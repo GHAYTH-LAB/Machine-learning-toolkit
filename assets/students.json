@@ -1,0 +1,12 @@
+[
+  {"id": 1, "name": "Ahmed Ben Ali", "age": 22, "city": "Tunis", "score": 85.5, "passed": true},
+  {"id": 2, "name": "Sarra Trabelsi", "age": 24, "city": "Sfax", "score": 92.0, "passed": true},
+  {"id": 3, "name": "Mohamed Gharbi", "age": 21, "city": "Sousse", "score": 47.3, "passed": false},
+  {"id": 4, "name": "Yasmine Khedher", "age": 23, "city": "Tunis", "score": 76.8, "passed": true},
+  {"id": 5, "name": "Karim Bouzid", "age": 25, "city": "Nabeul", "score": 58.2, "passed": false},
+  {"id": 6, "name": "Nour Chaabane", "age": 22, "city": "Sfax", "score": 88.9, "passed": true},
+  {"id": 7, "name": "Amine Jlassi", "age": 20, "city": "Tunis", "score": 63.4, "passed": true},
+  {"id": 8, "name": "Rania Mejri", "age": 24, "city": "Bizerte", "score": 41.0, "passed": false},
+  {"id": 9, "name": "Wassim Cherni", "age": 23, "city": "Sousse", "score": 79.6, "passed": true},
+  {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true}
+]
