@@ -51,7 +51,7 @@ print(Data.loc["Ghayth"])
 print(Data.iloc[1])
 print(Data[Data>=18])
 """
-
+"""
 import pandas as pd
 Dict={
     "Name":["Hamza","Talel","Raslen","Mouhib"]
@@ -75,6 +75,34 @@ Dict=pd.concat([Dict,new_dicti])
 print(Dict)
 Dict["prenames"]=["Ab",17,30,77,78,33]
 print(Dict)
+"""
+import pandas as pd
+Data={
+    "Name":["Ghayth","Aymen","Tarek"]
+    ,"Age":[27,35,22]
+    ,"Score":[50,70,10]
+}
+New_Data=pd.DataFrame(Data,index=["Student_1","Student_2","Student_3"])
+print("Data is")
+print(New_Data)
+New_Data.index=["Student4","Student3","Student2"]
+print(New_Data.loc["Student4"])
+print(New_Data.iloc[0])
+print("----------------")
+print(New_Data["Age"])
+New_Row=pd.DataFrame({
+    "Name":["Anass","Amine"]
+    ,"Age":[25,35]
+    ,"Score":[65,25]
+})
+New_Data=pd.concat([New_Data,New_Row])
+print("----------------")
+print(New_Data)
+New_Data["Married"]=[1,0,0,0,1]
+print("----------------")
+print(New_Data)
+
+
 
 
 
