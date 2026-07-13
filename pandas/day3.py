@@ -29,6 +29,7 @@ arr={
     ,"Age":[15,19,20,25]
     ,"Favourite_team":["psg","Barca","Barca","Real"]
 }
+
 new_arr=pd.DataFrame(arr,index=["First_Person","Second-Person","Third_Person","Fourth_Person"])
 print(new_arr)
 print(new_arr.loc["First_Person"])
