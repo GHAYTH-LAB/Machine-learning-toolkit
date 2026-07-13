@@ -51,6 +51,7 @@ print(Data.loc["Ghayth"])
 print(Data.iloc[1])
 print(Data[Data>=18])
 """
+
 import pandas as pd
 Dict={
     "Name":["Hamza","Talel","Raslen","Mouhib"]
@@ -71,6 +72,9 @@ new_dicti={
 }
 new_dicti=pd.DataFrame(new_dicti,index=[14,"True"])
 Dict=pd.concat([Dict,new_dicti])
+print(Dict)
+Dict["prenames"]=["Ab",17,30,77,78,33]
+print(Dict)
 
 
 
