@@ -23,7 +23,7 @@ Data.loc["Ninth_person"]={
     ,"married":1
 }
 print(Data)"""
-import pandas as pd
+"""import pandas as pd
 arr={
     "Name":["Anass","Ghayth","Adem","Yassine"]
     ,"Age":[15,19,20,25]
@@ -40,4 +40,38 @@ added_row=pd.DataFrame({
     ,"city":["Barcelone","London"]
     ,"married":[1,0]
 })
-new_arr=pd.concat([new_arr,added_row])
+new_arr=pd.concat([new_arr,added_row])"""
+"""import pandas as pd
+Data=[17,18,25,30]
+print(Data)
+Data=pd.Series(Data,index=["Ghayth","Abidli","Anass","Raslen"])
+print("Data as series are")
+print(Data)
+print(Data.loc["Ghayth"])
+print(Data.iloc[1])
+print(Data[Data>=18])
+"""
+import pandas as pd
+Dict={
+    "Name":["Hamza","Talel","Raslen","Mouhib"]
+    ,"Nationality":["Tunisia","Romania","Tunisia","Algeria"]
+    ,"Age":[27,18,55,34]
+}
+Dict=pd.DataFrame(Dict)
+print("Initial DataFrame")
+print(Dict)
+Dict.index=["G","h",3,4]
+print(Dict.loc["G"])
+print(Dict["Name"])
+print(Dict.loc["G","Name"])
+new_dicti={
+    "Name":["Aziz","Aniss"]
+    ,"Nationality":["Mar","Nigeria"]
+    ,"Age":[31,26]
+}
+new_dicti=pd.DataFrame(new_dicti,index=[14,"True"])
+Dict=pd.concat([Dict,new_dicti])
+
+
+
+
