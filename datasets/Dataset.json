@@ -1,0 +1,92 @@
+[
+    {
+        "student_id": 1,
+        "name": "Ghayth",
+        "age": 27,
+        "city": "Tunis",
+        "department": "Computer Science",
+        "gpa": 3.8,
+        "graduated": false
+    },
+    {
+        "student_id": 2,
+        "name": "Anass",
+        "age": 25,
+        "city": "Jendouba",
+        "department": "Artificial Intelligence",
+        "gpa": 3.5,
+        "graduated": false
+    },
+    {
+        "student_id": 3,
+        "name": "Aymen",
+        "age": 35,
+        "city": "Sousse",
+        "department": "Mathematics",
+        "gpa": 3.9,
+        "graduated": true
+    },
+    {
+        "student_id": 4,
+        "name": "Tarek",
+        "age": 22,
+        "city": "Nabeul",
+        "department": "Physics",
+        "gpa": 3.1,
+        "graduated": false
+    },
+    {
+        "student_id": 5,
+        "name": "Amine",
+        "age": 30,
+        "city": "Sfax",
+        "department": "Engineering",
+        "gpa": 3.7,
+        "graduated": true
+    },
+    {
+        "student_id": 6,
+        "name": "Hamza",
+        "age": 24,
+        "city": "Monastir",
+        "department": "Computer Science",
+        "gpa": 3.4,
+        "graduated": false
+    },
+    {
+        "student_id": 7,
+        "name": "Raslen",
+        "age": 21,
+        "city": "Kef",
+        "department": "Data Science",
+        "gpa": 3.6,
+        "graduated": false
+    },
+    {
+        "student_id": 8,
+        "name": "Ahmed",
+        "age": 28,
+        "city": "Gabes",
+        "department": "Cybersecurity",
+        "gpa": 3.3,
+        "graduated": true
+    },
+    {
+        "student_id": 9,
+        "name": "Dali",
+        "age": 31,
+        "city": "Bizerte",
+        "department": "Software Engineering",
+        "gpa": 3.9,
+        "graduated": true
+    },
+    {
+        "student_id": 10,
+        "name": "Aziz",
+        "age": 26,
+        "city": "Mahdia",
+        "department": "Machine Learning",
+        "gpa": 3.8,
+        "graduated": false
+    }
+]
