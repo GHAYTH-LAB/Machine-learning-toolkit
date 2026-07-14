@@ -1,3 +1,4 @@
+
 import pandas as pd
 #How to read a  csv file using pandas
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\quebec_housing_sales_v2.csv")
