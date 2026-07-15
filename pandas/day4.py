@@ -43,4 +43,8 @@ print("----------------------")
 print(df.loc[0:4,["App","Rating","Category"]])
 print("----------------------")
 print(df.loc[120:125,["App","Category","Rating"]])
+print("\n# Using head() to show first 5 rows")
+print(df.head())
+print("\n# Using tail() to show last 3 rows")
+print(df.tail(3))
 
