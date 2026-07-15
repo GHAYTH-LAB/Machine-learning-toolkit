@@ -96,3 +96,6 @@
 - **Combined Selection:** `df.loc[row_range, ["col1", "col2"]]` selects specific rows and columns together.
 - `.to_string()` converts a DataFrame to a formatted string for better readability when printing.
 - You can filter DataFrame columns using the same syntax: `df[["col1", "col2"]]` to get a subset of columns.
+- **`.head(n)`** shows the first `n` rows of a DataFrame (default is 5). Example: `df.head(3)` shows the first 3 rows.
+- **`.tail(n)`** shows the last `n` rows of a DataFrame (default is 5). Example: `df.tail(2)` shows the last 2 rows.
+- `.head()` and `.tail()` are useful for quickly previewing large DataFrames without printing the entire dataset.
