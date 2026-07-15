@@ -20,7 +20,9 @@
 - The `Series` constructor uses an uppercase `S`.
 -  to View some exercices and some other implementations non existant in the "master" branch you can visit revision branch via:
 --------------------- `git switch revision` ----------------------- 
+
 ---
+
 ## Day 2 of Learning pandas
 ***Date:*** July 12 2026
 # What i Learned 
@@ -33,6 +35,7 @@
 ![code-day-2](assets/pandas/ray-so-export.png)
 ### Example_output :
 ![Execution-day-2](assets/pandas/EXECUTION_DAY2%20_PANDAS.png)
+
 ### Notes / Key takeaways:
 - `pd.Series(data, index=[...])` lets you assign custom labels to each item instead of relying on default 0,1,2 positions.
 - `.loc[label]` selects an item by its **index label** (e.g. `Data.loc["index_1"]`).
@@ -41,7 +44,9 @@
 - `Data[condition]` filters the Series, keeping only the items that satisfy the condition inside `[...]` (e.g. `Data[Data != "B"]`).
 - Passing a `dict` into `pd.Series()` automatically uses the dict's **keys as the index** and its **values as the data** — no need to set `index=[...]` manually.
 - `.loc[]`, `.iloc[]`, and filtering with `[...]` all work the same way whether the Series was built from a list or a dict.
+
 ---
+
 ## Day 3 of learning pandas:
 ***Date:*** July 13 2026
 ### What I learned:
@@ -63,7 +68,9 @@
 - `.loc["label"]` is used to select a row by its index label.
 - To add a new row, create a one-row DataFrame and combine it with the existing one using `pd.concat([df, new_row])`.
 - The new row must include the same column names as the original DataFrame, otherwise missing values will appear as `NaN`.
+
 ---
+
 ## Day 4 of Learning Pandas
 ***Date:*** July 14 2026
 ### What I Learned ?
@@ -73,6 +80,7 @@
 ![My attempt](assets/pandas/Code_day_4_Learning_Pandas.png)
 ### Example_output:
 ![Execution](assets/pandas/Execution_day_4.png)
+
 ### Notes/Key Takeaways:
 - `pd.read_csv(r"file_path")` reads a CSV file and converts it into a DataFrame.
 - `pd.read_json(r"file_path")` reads a JSON file and converts it into a DataFrame.
