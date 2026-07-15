@@ -1,4 +1,4 @@
-#Revision
+#Revision of day 4
 import pandas as pd
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\genai_llm_usage_dataset_1000.csv")
 print(df)
