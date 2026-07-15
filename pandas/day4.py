@@ -43,3 +43,4 @@ print("----------------------")
 print(df.loc[0:4,["App","Rating","Category"]])
 print("----------------------")
 print(df.loc[120:125,["App","Category","Rating"]])
+
