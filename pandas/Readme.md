@@ -63,3 +63,28 @@
 - `.loc["label"]` is used to select a row by its index label.
 - To add a new row, create a one-row DataFrame and combine it with the existing one using `pd.concat([df, new_row])`.
 - The new row must include the same column names as the original DataFrame, otherwise missing values will appear as `NaN`.
+---
+## Day 4 of Learning Pandas
+***Date:*** July 14 2026
+### What I Learned ?
+-`pd.read_csv(r"file path")` reads a `csv` file and converts it into a DataFrame same as `pd.read_json()` (it reads a `Json` file )
+-- **`index_col`**: Sets a column as the DataFrame's index instead of using the default numeric index.
+### code:
+![My attempt](assets/pandas/Code_day_4_Learning_Pandas.png)
+### Example_output:
+![Execution](assets/pandas/Execution_day_4.png)
+### Notes/Key Takeaways:
+- `pd.read_csv(r"file_path")` reads a CSV file and converts it into a DataFrame.
+- `pd.read_json(r"file_path")` reads a JSON file and converts it into a DataFrame.
+- **`index_col`** parameter sets a specific column as the DataFrame's index (e.g., `pd.read_csv(..., index_col="City")`).
+- **Column Selection:**
+  - Single column: `df["column_name"]` returns a Series.
+  - Multiple columns: `df[["col1", "col2", "col3"]]` returns a DataFrame with only those columns.
+- **Row Selection:**
+  - `.loc[index_label]` selects a row by its index label.
+  - `.iloc[position]` selects a row by its integer position (0, 1, 2, ...).
+  - `.loc[start:end]` selects multiple rows by index label range.
+  - `.iloc[start:end]` selects multiple rows by position range.
+- **Combined Selection:** `df.loc[row_range, ["col1", "col2"]]` selects specific rows and columns together.
+- `.to_string()` converts a DataFrame to a formatted string for better readability when printing.
+- You can filter DataFrame columns using the same syntax: `df[["col1", "col2"]]` to get a subset of columns.
