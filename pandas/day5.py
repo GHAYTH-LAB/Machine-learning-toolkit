@@ -49,4 +49,13 @@ print(df.describe(include="all"))
 print("---------------------")
 #For a specific colomn
 print(df["TRANS_VALUE"].describe())
-#usin
+#using groupby function
+Newgroup=df.groupby("AREA_EN")
+print("--------------")
+print(Newgroup.count())
+print("---------------")
+print(Newgroup.mean(numeric_only=True))
+print("---------------")
+print(Newgroup.min(numeric_only=True))
+print("----------------")
+print(Newgroup.max(numeric_only=True))
