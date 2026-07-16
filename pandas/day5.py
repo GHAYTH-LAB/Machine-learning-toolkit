@@ -25,5 +25,5 @@ print("------------------------")
 # Using the and operator &
 print(df[(df["successful_response"] == 1) & (df["application_domain"] == "Coding")])
 print("--------------------------")
-#using the of operator (|)
+#using the or operator (|)
 print(df[(df["application_domain"]=="coding") | (df["application_domain"]=="Education")])
