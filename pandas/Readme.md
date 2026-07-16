@@ -99,3 +99,29 @@
 - **`.head(n)`** shows the first `n` rows of a DataFrame (default is 5). Example: `df.head(3)` shows the first 3 rows.
 - **`.tail(n)`** shows the last `n` rows of a DataFrame (default is 5). Example: `df.tail(2)` shows the last 2 rows.
 - `.head()` and `.tail()` are useful for quickly previewing large DataFrames without printing the entire dataset.
+
+---
+
+## Day 5 of Learning Pandas
+***Date:*** July 16 2026
+
+### What I Learned ?
+- How to read a CSV file into a DataFrame with `pd.read_csv()`.
+- How to display the whole DataFrame and preview it with `.head()` and `.tail()`.
+- How to select a single column or multiple columns from a DataFrame.
+- How to filter rows using conditions with `&` and `|`.
+- How to summarize data using `.min()`, `.max()`, `.mean()`, `.sum()`, `.median()`, `.mode()`, `.count()`, and `.describe()`.
+- How to group data with `.groupby()` and analyze grouped results.
+
+### code:
+![My attempt](assets/pandas/day_5_code_pandas.png)
+
+### Example_output:
+![Execution](assets/pandas/execution%20day%205%20pandas.png)
+
+### Notes / Key takeaways:
+- `pd.read_csv()` is used to load data from a CSV file into a DataFrame.
+- `.head()` and `.tail()` help you quickly inspect the beginning and end of a dataset.
+- Conditional filtering can combine multiple rules with `&` for AND and `|` for OR.
+- `.describe()` provides useful summary statistics for a DataFrame or a specific column.
+- `.groupby()` helps organize data into groups so you can calculate statistics for each group.
