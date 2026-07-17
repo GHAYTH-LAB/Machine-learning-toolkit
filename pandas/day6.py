@@ -1,5 +1,7 @@
-#Revision of day 5 
+# Day 6: Data cleaning and preprocessing
 import pandas as pd
+
+# Load and inspect the migration dataset
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\indian_overseas_migration_dataset.csv")
 print(df.to_string())
 print("-------------------------")
@@ -65,13 +67,18 @@ print(df.tail())
 print("------------------------")
 print(df[(df["age"]>22) & (df["passed"]==1)])
 print("---------------------------")
-#Pure day 6 learning
+# Pure day 6 learning
+# Load the housing sales dataset and remove an unnecessary column
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\quebec_housing_sales_v2.csv")
 print(df.to_string())
 df=df.drop(columns=["property_id"])
 print("-----------------------------")
+
+# Remove rows with missing values in specific columns
 df=df.dropna(subset=["lot_size_sqft","renovation_year"])
 print(df.count())
+
+# Load the migration dataset and fill missing values with the most common entry
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\indian_overseas_migration_dataset.csv")
 print(df.count())
 df=df.fillna({
@@ -80,13 +87,18 @@ df=df.fillna({
     ,"Notes":df["Notes"].mode()[0]
 })
 print("------------------")
+
+# Standardize values and convert text to lowercase
 df["Region"]=df["Region"].replace({
     "North America":"north america"
     ,"Europe":"europe"
     ,"Asia":"asia"
 })
 df["Column_Name"]=df["Column_Name"].str.lower()
+
+# Remove duplicate rows from the student dataset
 df=pd.read_json(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\students.json")
+print(df)
 df=df.drop_duplicates()
 print("-------------------------")
 print(df)
