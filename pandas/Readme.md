@@ -103,7 +103,7 @@
 ---
 
 ## Day 5 of Learning Pandas
-***Date:*** July 16 2026
+***Date:*** July 15 2026
 
 ### What I Learned ?
 - How to read a CSV file into a DataFrame with `pd.read_csv()`.
@@ -125,3 +125,31 @@
 - Conditional filtering can combine multiple rules with `&` for AND and `|` for OR.
 - `.describe()` provides useful summary statistics for a DataFrame or a specific column.
 - `.groupby()` helps organize data into groups so you can calculate statistics for each group.
+
+---
+
+## Day 6 of Learning Pandas
+***Date:*** July 16 2026
+
+### What is new in Day 6
+- Dropping an unnecessary column with `.drop(columns=[...])`.
+- Removing rows that contain missing values in specific columns with `.dropna(subset=[...])`.
+- Filling missing values with the most common value using `.fillna(...)`.
+- Standardizing text values with `.replace({...})`.
+- Converting text to lowercase with `.str.lower()`.
+- Removing duplicate rows with `.drop_duplicates()`.
+
+### code:
+![My attempt](assets/pandas/code_day6_pandas.png)
+
+### Example_output:
+![Execution](assets/pandas/Execution%20day%206%20pandas.png)
+
+### Notes / Key takeaways:
+- Day 6 introduces data cleaning and preparation steps that were not covered in the earlier days.
+- `.drop(columns=[...])` removes columns that are no longer needed.
+- `.dropna(subset=[...])` removes rows with missing values in selected columns.
+- `.fillna({...})` replaces missing values with useful default values.
+- `.replace({...})` helps normalize categories and labels.
+- `.str.lower()` makes text values consistent.
+- `.drop_duplicates()` removes repeated rows from the dataset.
