@@ -50,7 +50,7 @@ print(New_groups.count())
 print("----------------------------")
 print(New_groups["living_area_sqft"].mean())
 df=pd.read_json(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\students.json")
-df["uni"]=["insat","fst","fsb","insat","insat","isg","ihec","ihec","insat","fst","insat","fst","ihec","isg"]
+df["uni"]=["insat","fst","fsb","insat","insat","isg","ihec","ihec","insat","fst"]
 New_row={
     "id":[11,12]
     ,"name":["Ala","Rayen"]
@@ -64,29 +64,3 @@ df=pd.concat([df,New_row])
 print(df.tail())
 print("------------------------")
 print(df[(df["age"]>22) & (df["passed"]==1)])
-print("---------------------------")
-#Pure day 6 learning
-df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\quebec_housing_sales_v2.csv")
-print(df.to_string())
-df=df.drop(columns=["property_id"])
-print("-----------------------------")
-df=df.dropna(subset=["lot_size_sqft","renovation_year"])
-print(df.count())
-df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\indian_overseas_migration_dataset.csv")
-print(df.count())
-df=df.fillna({
-    "Source_URL":df["Source_URL"].mode()[0]
-    ,"Source_Name":df["Source_Name"].mode()[0]
-    ,"Notes":df["Notes"].mode()[0]
-})
-print("------------------")
-df["Region"]=df["Region"].replace({
-    "North America":"north america"
-    ,"Europe":"europe"
-    ,"Asia":"asia"
-})
-df["Column_Name"]=df["Column_Name"].str.lower()
-df=pd.read_json(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\students.json")
-df=df.drop_duplicates()
-print("-------------------------")
-print(df)

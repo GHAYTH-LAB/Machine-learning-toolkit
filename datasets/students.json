@@ -8,5 +8,9 @@
   {"id": 7, "name": "Amine Jlassi", "age": 20, "city": "Tunis", "score": 63.4, "passed": true},
   {"id": 8, "name": "Rania Mejri", "age": 24, "city": "Bizerte", "score": 41.0, "passed": false},
   {"id": 9, "name": "Wassim Cherni", "age": 23, "city": "Sousse", "score": 79.6, "passed": true},
+  {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true},
+  {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true},
+  {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true},
+  {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true},
   {"id": 10, "name": "Ines Sassi", "age": 21, "city": "Tunis", "score": 95.1, "passed": true}
 ]
