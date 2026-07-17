@@ -153,3 +153,58 @@
 - `.replace({...})` helps normalize categories and labels.
 - `.str.lower()` makes text values consistent.
 - `.drop_duplicates()` removes repeated rows from the dataset.
+
+---
+
+## Day 7 of Learning Pandas
+***Date:*** July 17 2026
+
+### What I learned
+- Reading data from a CSV using `pd.read_csv()`.
+- Detecting and removing duplicate rows with `.drop_duplicates()`.
+- Dropping unnecessary columns with `.drop(columns=[...])`.
+- Converting all column names to lowercase with `df.columns = df.columns.str.lower()`.
+- Removing rows with missing values using `.dropna()`.
+- Replacing boolean values with numeric values using `.replace({True: 1, False: 0})`.
+- Cleaning text fields by removing characters like `$` and `,` with `.str.replace()`.
+- Saving the cleaned dataset to a new CSV file with `.to_csv()`.
+
+### code:
+```python
+import pandas as pd
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\Airbnb_Open_Data.csv")
+print(df.duplicated().sum())
+df = df.drop_duplicates()
+df = df.drop(columns=['reviews per month', 'review rate number',
+       'calculated host listings count', 'availability 365', 'house_rules',
+       'license'])
+print(df.info())
+df.columns = df.columns.str.lower()
+print(df.columns)
+print(df.isna().sum())
+df = df.drop(columns='last review')
+print(df.columns)
+df = df.dropna()
+print(df.isna().sum())
+df["instant_bookable"] = df["instant_bookable"].replace({
+    True: 1,
+    False: 0
+})
+print(df["instant_bookable"].to_string())
+df[["price", "service fee"]] = df[["price", "service fee"]].apply(lambda col: col.str.replace("$", ""))
+df[["price", "service fee"]] = df[["price", "service fee"]].apply(lambda col: col.str.replace(",", ""))
+print("\n ", df[["price", "service fee"]])
+print(df.columns)
+df.to_csv("Clean Dataset.csv")
+```
+
+### Notes / Key takeaways:
+- Day 7 focuses on data cleaning and preparing a dataset for analysis.
+- `.drop_duplicates()` removes duplicate rows from the dataset.
+- `.drop(columns=[...])` removes irrelevant or unwanted columns.
+- `df.columns = df.columns.str.lower()` standardizes column names to lowercase.
+- `.dropna()` removes rows with missing values to ensure cleaner data.
+- `.replace({True: 1, False: 0})` converts boolean values to numeric format.
+- `.str.replace("$", "")` and `.str.replace(",", "")` clean numeric strings for later numeric conversion.
+- `.to_csv("Clean Dataset.csv")` saves the cleaned data to a new file.
+
