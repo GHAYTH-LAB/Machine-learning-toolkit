@@ -1,9 +1,3 @@
-## Tutorial Video
-
-[![Watch the tutorial](https://img.youtube.com/vi/VXtjG_GzO7Q/0.jpg)](https://youtu.be/VXtjG_GzO7Q?si=e8AGJ8ANheLDQe_Y)
-
-Click the image above to watch the video on YouTube.
-
 ## Day 1 of Learning pandas
 
 ### What I learned
@@ -15,7 +9,17 @@ Click the image above to watch the video on YouTube.
 
 ### Code
 
-![My attempt](assets/pandas/Importing_pandas_library_day1-corrected.png)
+```python
+# 1-pd.Series(arr)
+import pandas as pd
+arr = [10, 20.5, 30]
+new_arr = pd.Series(arr, index=["Appartment 1", "Appartment 2", "Appartment 3"])
+print("The list before applying Series:")
+print(arr)
+print("The list after applying Series:")
+print(new_arr)
+print(new_arr.loc["Appartment 1"])
+```
 
 ### Example_output
 
@@ -47,11 +51,30 @@ Click the image above to watch the video on YouTube.
 
 ### code
 
-![code-day-2](assets/pandas/ray-so-export.png)
+```python
+import pandas as pd
+Data = pd.Series(["A", "B", "C"], index=["index_1", "index_2", "index_3"])
+# Displaying our Series
+print(Data)
+# Displaying an item of Series based on its index label
+print(Data.loc["index_1"])
+# Displaying an item of Series based on its position
+print(Data.iloc[0])
+# Modify the Series index
+Data.index = [1, 2, 3]
+print(Data[Data != "B"])
+
+# Example with a Python dictionary
+Dict = {"first": 15, "second": 20, "third": 40}
+print(pd.Series(Dict))
+print(pd.Series(Dict).loc["second"])
+print(pd.Series(Dict).iloc[2])
+print(pd.Series(Dict)[pd.Series(Dict) <= 20])
+```
 
 ### Example_output :
 
-![Execution-day-2](<assets/pandas/EXECUTION_DAY2%20_PANDAS.png>)
+![Execution-day-2](assets/pandas/EXECUTION_DAY2%20_PANDAS.png)
 
 ### Notes / Key takeaways:
 
@@ -79,7 +102,37 @@ Click the image above to watch the video on YouTube.
 
 ### code:
 
-![My attempt](assets/pandas/Code_day3.png)
+```python
+import pandas as pd
+# creating a dictionary named Data
+Data = {
+    "Name": ["Ghayth", "ALBERT", "Yassine"],
+    "age": [19, 30, 22],
+    "job": ["swe engeneer", "teacher", "police"]
+}
+# convert a dictionary into a DataFrame
+df = pd.DataFrame(Data)
+print(df)
+# changing the row indexes
+df.index = ["First_employee", "Second_employee", "Third_employee"]
+print(df)
+# adding new column named married
+df["married"] = [0, 1, 0]
+print(df)
+print("---------------------")
+# printing the row that contains Second_employee label
+print(df.loc["Second_employee"])
+print("---------------------")
+# adding a new column named Score
+df["score"] = [15, 20, 25]
+print(df)
+# adding a new row with an index
+New_Row = pd.DataFrame([{"Name": "houssem", "age": 27, "job": "instructor", "married": 1, "score": 37}], index=["Fourth_employee"])
+df = pd.concat([df, New_Row])
+print("---------------------")
+print("final DataFrame is:")
+print(df)
+```
 
 ### Example_output
 
@@ -108,7 +161,36 @@ Click the image above to watch the video on YouTube.
 
 ### code:
 
-![My attempt](assets/pandas/Code_day_4_Learning_Pandas.png)
+```python
+import pandas as pd
+# How to read a csv file using pandas
+
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\quebec_housing_sales_v2.csv")
+print(df.to_string())
+print("--------------------")
+# How to read a json file using pandas
+
+df1 = pd.read_json(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\students.json")
+print(df1)
+print(df1["name"])
+print("---------------------")
+# Selection by multiple columns
+print(df[["bedrooms", "bathrooms", "garage"]].to_string())
+# Selection per row
+print(df.loc[2])
+print("---------------------")
+print(df1.iloc[2])
+print("----------------------")
+import pandas as pd
+Data = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\assets\WorldCupMatches.csv", index_col="City")
+print(Data)
+print("----------------------")
+print(Data.loc["Sao Paulo "])
+print("----------------------")
+print(Data["Stadium"])
+print("-----------------------")
+print(Data[["Home Team Name", "Away Team Name", "Year"]])
+```
 
 ### Example_output:
 
@@ -151,11 +233,47 @@ Click the image above to watch the video on YouTube.
 
 ### code:
 
-![My attempt](assets/pandas/day_5_code_pandas.png)
+```python
+import pandas as pd
+# Revision of day 4 and dataset analysis
+
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\genai_llm_usage_dataset_1000.csv")
+print(df)
+print(df.loc[1])
+print("-------------------")
+print(df.iloc[2])
+print("--------------------")
+print(df["model_name"])
+print("--------------------")
+print(df.head())
+print("---------------------")
+print(df.head(8))
+print("---------------------")
+print(df.tail(10))
+print(df.loc[[5, 7, 10]])
+print("----------------------")
+print(df.loc[15:20])
+print("------------------------")
+print(df[["model_name", "successful_response", "prompt_length"]])
+print("------------------------")
+print(df.loc[2:15, ["model_name", "task_type", "latency_sec"]])
+print("------------------------")
+# filtering based on a condition
+print(df[(df["successful_response"] == 1) & (df["application_domain"] == "Coding")])
+print("--------------------------")
+print(df[(df["application_domain"] == "coding") | (df["application_domain"] == "Education")])
+print(df.min(numeric_only=True))
+print(df.max(numeric_only=True))
+print(df.mean(numeric_only=True))
+print(df.sum(numeric_only=True))
+print(df.median(numeric_only=True))
+print(df.mode())
+print(df.count(numeric_only=True))
+```
 
 ### Example_output:
 
-![Execution](<assets/pandas/execution%20day%205%20pandas.png>)
+![Execution](assets/pandas/execution%20day%205%20pandas.png)
 
 ### Notes / Key takeaways:
 
@@ -182,11 +300,62 @@ Click the image above to watch the video on YouTube.
 
 ### code:
 
-![My attempt](assets/pandas/code_day6_pandas.png)
+```python
+import pandas as pd
+# Day 6: Data cleaning and preprocessing
+
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\indian_overseas_migration_dataset.csv")
+print(df.to_string())
+print("-------------------------")
+print(df.loc[0])
+print("-------------------------")
+print(df.iloc[2])
+print("-------------------------")
+print(df.loc[[2, 3, 5]])
+print("-------------------------")
+print(df.loc[8:12])
+print("-------------------------")
+print(df.head())
+print("--------------------------")
+print(df.tail())
+print("--------------------------")
+print(df["Destination_Country"])
+print("--------------------------")
+print(df[["Destination_Country", "Value", "Source_URL"]])
+print("---------------------------")
+print(df.loc[40:45, ["Destination_Country", "Region", "Year"]])
+print("---------------------------")
+print(df.mean(numeric_only=True))
+print("----------------------------")
+print(df.count())
+print("----------------------------")
+print(df.min(numeric_only=True))
+print("---------------------------")
+print(df.max(numeric_only=True))
+print("----------------------------")
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\quebec_housing_sales_v2.csv")
+print(df["bedrooms"].median())
+print(df["bedrooms"].sum())
+print(df["bedrooms"].min())
+print(df["bedrooms"].max())
+print(df["bedrooms"].mode())
+print(df["bedrooms"].count())
+print("--------------------------")
+print(df["bedrooms"].describe())
+print("--------------------------")
+New_groups = df.groupby("city")
+print(New_groups.sum())
+print("---------------------------")
+print(New_groups["living_area_sqft"].median())
+print("-----------------------------")
+print(New_groups.count())
+print("----------------------------")
+print(New_groups["living_area_sqft"].mean())
+``` 
 
 ### Example_output:
 
-![Execution](<assets/pandas/Execution%20day%206%20pandas.png>)
+![Execution](assets/pandas/Execution%20day%206%20pandas.png)
 
 ### Notes / Key takeaways:
 
@@ -324,4 +493,7 @@ print("-----------")
 ### My journey
 This `pandas` journey has been a rewarding transformation from messy raw tables to clean, analysis-ready datasets. By removing duplicates with `.drop_duplicates()`, normalizing column names with `.str.lower()`, `.str.strip()`, and `.str.replace()`, filling gaps with `.fillna(...)`, and refining text values, I learned how powerful data cleaning can be. A guided video tutorial helped turn each step into a clear lesson, making this experience both practical and inspiring.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VXtjG_GzO7Q?si=y6AQ9F67z1tP46Or" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+All the code and the exercises are taken from this tutorial:
+
+[![Watch the tutorial](https://img.youtube.com/vi/VXtjG_GzO7Q/0.jpg)](https://youtu.be/VXtjG_GzO7Q?si=y6AGJ8ANheLDQe_Y)
+
