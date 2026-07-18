@@ -1,42 +1,54 @@
 ## Day 1 of Learning pandas
-***Date:*** July 11 2026
 
 ### What I learned
+
 - Importing the `pandas` library
 - Creating a `pd.Series(data)` object
 - Creating a `pd.Series(data, index=[...])` object
 - Selecting data with `.loc[...]`
 
 ### Code
+
 ![My attempt](assets/pandas/Importing_pandas_library_day1-corrected.png)
 
 ### Example_output
+
 ![Execution](assets/pandas/execution_day1_pandas.png)
 
 ### Notes / Key takeaways
+
 - `pd.Series(data)` creates a one-dimensional labeled data structure.
 - `pd.Series(data, index=[...])` sets custom index labels.
 - `.loc[index]` selects rows or values by index label.
 - The `Series` constructor uses an uppercase `S`.
--  to View some exercices and some other implementations non existant in the "master" branch you can visit revision branch via:
---------------------- `git switch revision` ----------------------- 
+- to View some exercices and some other implementations non existant in the "master" branch you can visit revision branch via:
+  --------------------- `git switch revision` -----------------------
 
 ---
 
 ## Day 2 of Learning pandas
+
 ***Date:*** July 12 2026
-# What i Learned 
+
+# What i Learned
+
 ## WHAT IS THE DIFFERENCE BTWEEN `.loc` and `.iloc` ?
+
 - `.loc[]` selects by label(index_name),While `.iloc[]` selects by integer position(0,1,2,3,..........) regardless of what labels are.
 - `Data[Data<200]` filters the Data Series and only gardes the elements that satisfy the condition between [...]
 - `Data.index=[.......]` is the way to acces to the Series indexes (lables)
 - A Python `dict` stores `key: value` pairs, where keys must be hashable (e.g. `str`, `int`, `tuple`) but not necessarily strings, and passing a `dict` into `pd.Series()` automatically uses its keys as the index.
+
 ### code
+
 ![code-day-2](assets/pandas/ray-so-export.png)
+
 ### Example_output :
-![Execution-day-2](assets/pandas/EXECUTION_DAY2%20_PANDAS.png)
+
+![Execution-day-2](<assets/pandas/EXECUTION_DAY2%20_PANDAS.png>)
 
 ### Notes / Key takeaways:
+
 - `pd.Series(data, index=[...])` lets you assign custom labels to each item instead of relying on default 0,1,2 positions.
 - `.loc[label]` selects an item by its **index label** (e.g. `Data.loc["index_1"]`).
 - `.iloc[position]` selects an item by its **integer position**, regardless of what the labels are (position always starts at 0).
@@ -48,19 +60,27 @@
 ---
 
 ## Day 3 of learning pandas:
+
 ***Date:*** July 13 2026
+
 ### What I learned:
+
 -a `DataFrame` is a two dimentional labled data structure
--`pd.DataFrame` creates a DataFrame structure 
+-`pd.DataFrame` creates a DataFrame structure
 -we can acces to a line by `Data.loc(Label_Name)` or by `Data.iloc(index)`
 -we can add `a line` by creating a new line by creating a new `DataFrame` and then use `pd.concat([old DataFrame,New DataFrame])`
 -we can add a column `Data[.......]=......`
+
 ### code:
+
 ![My attempt](assets/pandas/Code_day3.png)
+
 ### Example_output
+
 ![IMPLEMENTATION_Day3](assets/pandas/Implementation_day_3.png)
 
 ### Notes / Key takeaways:
+
 - A `DataFrame` is a two-dimensional table made of rows and columns.
 - `pd.DataFrame(data)` converts a dictionary into a DataFrame.
 - You can rename row labels with `df.index = [...]` to make data access easier.
@@ -72,16 +92,24 @@
 ---
 
 ## Day 4 of Learning Pandas
+
 ***Date:*** July 14 2026
+
 ### What I Learned ?
+
 -`pd.read_csv(r"file path")` reads a `csv` file and converts it into a DataFrame same as `pd.read_json()` (it reads a `Json` file )
 -- **`index_col`**: Sets a column as the DataFrame's index instead of using the default numeric index.
+
 ### code:
+
 ![My attempt](assets/pandas/Code_day_4_Learning_Pandas.png)
+
 ### Example_output:
+
 ![Execution](assets/pandas/Execution_day_4.png)
 
 ### Notes/Key Takeaways:
+
 - `pd.read_csv(r"file_path")` reads a CSV file and converts it into a DataFrame.
 - `pd.read_json(r"file_path")` reads a JSON file and converts it into a DataFrame.
 - **`index_col`** parameter sets a specific column as the DataFrame's index (e.g., `pd.read_csv(..., index_col="City")`).
@@ -103,9 +131,11 @@
 ---
 
 ## Day 5 of Learning Pandas
+
 ***Date:*** July 15 2026
 
 ### What I Learned ?
+
 - How to read a CSV file into a DataFrame with `pd.read_csv()`.
 - How to display the whole DataFrame and preview it with `.head()` and `.tail()`.
 - How to select a single column or multiple columns from a DataFrame.
@@ -114,12 +144,15 @@
 - How to group data with `.groupby()` and analyze grouped results.
 
 ### code:
+
 ![My attempt](assets/pandas/day_5_code_pandas.png)
 
 ### Example_output:
-![Execution](assets/pandas/execution%20day%205%20pandas.png)
+
+![Execution](<assets/pandas/execution%20day%205%20pandas.png>)
 
 ### Notes / Key takeaways:
+
 - `pd.read_csv()` is used to load data from a CSV file into a DataFrame.
 - `.head()` and `.tail()` help you quickly inspect the beginning and end of a dataset.
 - Conditional filtering can combine multiple rules with `&` for AND and `|` for OR.
@@ -129,9 +162,11 @@
 ---
 
 ## Day 6 of Learning Pandas
+
 ***Date:*** July 16 2026
 
 ### What is new in Day 6
+
 - Dropping an unnecessary column with `.drop(columns=[...])`.
 - Removing rows that contain missing values in specific columns with `.dropna(subset=[...])`.
 - Filling missing values with the most common value using `.fillna(...)`.
@@ -140,12 +175,15 @@
 - Removing duplicate rows with `.drop_duplicates()`.
 
 ### code:
+
 ![My attempt](assets/pandas/code_day6_pandas.png)
 
 ### Example_output:
-![Execution](assets/pandas/Execution%20day%206%20pandas.png)
+
+![Execution](<assets/pandas/Execution%20day%206%20pandas.png>)
 
 ### Notes / Key takeaways:
+
 - Day 6 introduces data cleaning and preparation steps that were not covered in the earlier days.
 - `.drop(columns=[...])` removes columns that are no longer needed.
 - `.dropna(subset=[...])` removes rows with missing values in selected columns.
@@ -157,9 +195,11 @@
 ---
 
 ## Day 7 of Learning Pandas
+
 ***Date:*** July 17 2026
 
 ### What I learned
+
 - Reading data from a CSV using `pd.read_csv()`.
 - Detecting and removing duplicate rows with `.drop_duplicates()`.
 - Dropping unnecessary columns with `.drop(columns=[...])`.
@@ -170,6 +210,7 @@
 - Saving the cleaned dataset to a new CSV file with `.to_csv()`.
 
 ### code:
+
 ```python
 import pandas as pd
 df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\Airbnb_Open_Data.csv")
@@ -199,6 +240,7 @@ df.to_csv("Clean Dataset.csv")
 ```
 
 ### Notes / Key takeaways:
+
 - Day 7 focuses on data cleaning and preparing a dataset for analysis.
 - `.drop_duplicates()` removes duplicate rows from the dataset.
 - `.drop(columns=[...])` removes irrelevant or unwanted columns.
@@ -208,3 +250,68 @@ df.to_csv("Clean Dataset.csv")
 - `.str.replace("$", "")` and `.str.replace(",", "")` clean numeric strings for later numeric conversion.
 - `.to_csv("Clean Dataset.csv")` saves the cleaned data to a new file.
 
+---
+
+## Day 8 of Learning Pandas
+
+***Date:*** July 18 2026
+
+### What I learned
+
+- Reading a CSV file into a DataFrame using `pd.read_csv()`.
+- Dropping duplicate rows with `.drop_duplicates()`.
+- Normalizing column names with `.str.lower()`, `.str.strip()`, and `.str.replace()`.
+- Filling missing values with mode and median values using `.fillna({...})`.
+- Dropping rows with missing values in a specific column using `.dropna(subset=...)`.
+- Cleaning text columns using `.str.strip()` and `.str.lower()`.
+- Removing unwanted punctuation from string values with `.str.replace()`.
+- Saving the cleaned DataFrame to a new CSV file with `.to_csv(..., index=False)`.
+
+### code:
+
+```python
+import pandas as pd
+df = pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\Bengaluru_House_Data.csv")
+df = df.drop_duplicates()
+df.columns = df.columns.str.lower()
+df.columns = df.columns.str.strip()
+df.columns = df.columns.str.replace("_", " ")
+print(df.columns)
+df = df.fillna({
+    "area type": df["area type"].mode()[0],
+    "availability": df["availability"].mode()[0],
+    "size": df["size"].mode()[0],
+    "society": df["society"].mode()[0],
+    "bath": df["bath"].median(),
+    "balcony": df["balcony"].median(),
+    "price": df["price"].median()
+})
+print(df.dtypes)
+df = df.drop_duplicates()
+df = df.dropna(subset=["location"])
+df["area type"] = df["area type"].str.strip()
+df["availability"] = df["availability"].str.strip()
+df["location"] = df["location"].str.strip()
+df["size"] = df["size"].str.strip()
+df["society"] = df["society"].str.strip()
+df["total sqft"] = df["total sqft"].str.strip()
+df["area type"] = df["area type"].str.lower()
+df["area type"] = df["area type"].str.replace("-", " ")
+df["availability"] = df["availability"].str.lower()
+df["availability"] = df["availability"].str.replace("-", " ")
+df["location"] = df["location"].str.lower()
+df["location"] = df["location"].str.replace("-", " ")
+df["society"] = df["society"].str.lower()
+df.to_csv("New_ FINAL_cleaned_dataset about bengaluru House Data.CSV", index=False)
+print("-----------")
+```
+
+### Notes / Key takeaways:
+
+- Day 8 continues data cleaning with missing value imputation and text normalization.
+- `.drop_duplicates()` removes repeated rows before and after cleaning.
+- `.str.lower()`, `.str.strip()`, and `.str.replace()` standardize column names and string values.
+- `.fillna({...})` fills missing values using the most common or median values for each column.
+- `.dropna(subset=["location"])` removes rows that still lack location data.
+- Cleaning string columns prepares text for consistent analysis.
+- `.to_csv(..., index=False)` saves the final cleaned dataset without adding a new index column.
