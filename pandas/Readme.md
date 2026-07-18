@@ -315,3 +315,7 @@ print("-----------")
 - `.dropna(subset=["location"])` removes rows that still lack location data.
 - Cleaning string columns prepares text for consistent analysis.
 - `.to_csv(..., index=False)` saves the final cleaned dataset without adding a new index column.
+### My journey
+This `pandas` journey has been a rewarding transformation from messy raw tables to clean, analysis-ready datasets. By removing duplicates with `.drop_duplicates()`, normalizing column names with `.str.lower()`, `.str.strip()`, and `.str.replace()`, filling gaps with `.fillna(...)`, and refining text values, I learned how powerful data cleaning can be. A guided video tutorial helped turn each step into a clear lesson, making this experience both practical and inspiring.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VXtjG_GzO7Q?si=y6AQ9F67z1tP46Or" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
