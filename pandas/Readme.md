@@ -1,3 +1,9 @@
+## Tutorial Video
+
+[![Watch the tutorial](https://img.youtube.com/vi/VXtjG_GzO7Q/0.jpg)](https://youtu.be/VXtjG_GzO7Q?si=e8AGJ8ANheLDQe_Y)
+
+Click the image above to watch the video on YouTube.
+
 ## Day 1 of Learning pandas
 
 ### What I learned
