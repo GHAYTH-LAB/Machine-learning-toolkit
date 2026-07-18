@@ -491,9 +491,15 @@ print("-----------")
 - Cleaning string columns prepares text for consistent analysis.
 - `.to_csv(..., index=False)` saves the final cleaned dataset without adding a new index column.
 ### My journey
-This `pandas` journey has been a rewarding transformation from messy raw tables to clean, analysis-ready datasets. By removing duplicates with `.drop_duplicates()`, normalizing column names with `.str.lower()`, `.str.strip()`, and `.str.replace()`, filling gaps with `.fillna(...)`, and refining text values, I learned how powerful data cleaning can be. A guided video tutorial helped turn each step into a clear lesson, making this experience both practical and inspiring.
+> **This pandas journey was a rewarding transformation from messy raw tables to clean, analysis-ready datasets.**
+> 
+> I cleaned data by dropping duplicates, normalizing column names, filling missing values, and standardizing text so the dataset became analysis-ready.
+> 
+> **All datasets used in this project are from [Kaggle](https://www.kaggle.com).**
+> 
+> This work is based on a guided tutorial that made each step easy to follow and inspiring.
 
-All the code and the exercises are taken from this tutorial:
+**All the code and exercises are taken from this tutorial:**
 
 [![Watch the tutorial](https://img.youtube.com/vi/VXtjG_GzO7Q/0.jpg)](https://youtu.be/VXtjG_GzO7Q?si=y6AGJ8ANheLDQe_Y)
 
