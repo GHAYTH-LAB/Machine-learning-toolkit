@@ -1,5 +1,5 @@
 # Reminder of python lists
-List=[1,2,3,4]
+"""List=[1,2,3,4]
 print(List)
 # we acces elements by index(first element index is 0)
 print(List[0])
@@ -21,4 +21,13 @@ New_array2=np.full((10),6)
 print(New_array2)
 New_array3=np.full((5,4),8)
 print(New_array3)
-print(array3[3])
+print(array3[3])"""
+import numpy as np
+arr=np.array(["1,5,7,10"])
+arr1=np.arange(1,17,3)
+arr2=np.zeros(10)
+arr3=np.full((10),7)
+print(arr)
+print(arr1)
+print(arr2)
+print(arr3)
