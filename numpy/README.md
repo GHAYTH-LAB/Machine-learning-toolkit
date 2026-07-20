@@ -1,6 +1,6 @@
-# NumPy — Day 1 & Day 2
+# NumPy — Day 1 through Day 4
 
-This README documents the examples and notes for `day1.py` and `day2.py` in the `numpy` folder.
+This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, and `day4.py` in the `numpy` folder.
 
 ---
 
@@ -189,4 +189,45 @@ python "numpy/day3.py"
 [15 13 11  9  7  3]
 [[ 1  5  7]
  [ 8  9 11]]
+```
+
+---
+
+## Day 4 — NumPy Iteration and Elementwise Operations
+
+`day4.py` demonstrates array creation, reversing, absolute values, and elementwise iteration using `np.nditer()`.
+
+### Summary
+`day4.py` includes:
+
+- Creating a 1D odd-number array with `np.arange()`
+- Reversing and taking absolute values of a NumPy array
+- Iterating over arrays with `np.nditer()`
+- Demonstrating iteration over a 2D array in row-major order
+
+### Run
+From the workspace root run:
+
+```bash
+python "numpy/day4.py"
+```
+
+### What the script does
+
+- Creates a 1D odd integer array with `np.arange(1, 9, 2)`
+- Builds a second array, reverses it, and applies `np.abs()` 
+- Iterates over the resulting 1D array using `np.nditer()` and prints values separated by `/`
+- Creates a 2D array of ones and iterates through it with `np.nditer()` as well
+- Builds and prints a 2D array, then iterates over it in row-major order
+
+### Sample output
+
+```
+1/3/7/9/
+
+1/1/1/1/1/1/1/1/1/1/1/1/
+
+[[1 3 5]
+ [2 4 6]]
+1/3/5/2/4/6/
 ```
