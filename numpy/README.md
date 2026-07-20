@@ -1,6 +1,6 @@
-# NumPy — Day 1 through Day 6
+# NumPy — Day 1 through Day 7
 
-This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, `day4.py`, `day5.py`, and `day6.py` in the `numpy` folder.
+This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, `day4.py`, `day5.py`, `day6.py`, and `day7.py` in the `numpy` folder.
 
 ---
 
@@ -307,4 +307,43 @@ python "numpy/day6.py"
 [6 7 4 9 0 2 1]
 [0 1 2 4 6 7 9]
 [9 7 6 4 2 1 0]
+```
+
+---
+
+## Day 7 — Boolean Indexing and Filtering
+
+`day7.py` demonstrates boolean masking (indexing) to filter NumPy arrays using both an explicit loop and a vectorized expression.
+
+### Summary
+
+`day7.py` includes:
+
+- Creating a 1D numeric array with `np.array()`
+- Building a boolean mask using a Python loop
+- Using the vectorized shortcut `np1 % 2 == 0` to create a mask
+- Applying the boolean mask to select elements from the array
+
+### Run
+From the workspace root run:
+
+```bash
+python "numpy/day7.py"
+```
+
+### What the script does
+
+- Builds a boolean list by iterating over the array and appending `True`/`False` according to a condition (even numbers)
+- Uses that list as a mask to select elements from the original array
+- Demonstrates the concise, vectorized approach `np1 % 2 == 0` which yields the same result
+
+### Sample output
+
+```
+[1 2 3 4 5 6 7 8 9 10]
+[False, True, False, True, False, True, False, True, False, True]
+[2 4 6 8 10]
+[1 2 3 4 5 6 7 8 9 10]
+[False  True False  True False  True False  True False  True]
+[2 4 6 8 10]
 ```
