@@ -83,7 +83,9 @@ Key takeaways:
 This file documents the purpose, usage, and examples for `day2.py` in the `numpy` folder.
 
 ## Summary
+
 `day2.py` demonstrates basic NumPy array creation, common slicing techniques, and simple 2D-array indexing. It includes examples for:
+
 - 1D array creation (`array`, `arange`, `zeros`, `full`)
 - Slicing and indexing (positive, negative indices, steps, reversing)
 - Basic 2D array indexing and subarray selection
@@ -91,6 +93,7 @@ This file documents the purpose, usage, and examples for `day2.py` in the `numpy
 > Note: the file imports `pandas` but the script doesn't use it — you can safely remove that import.
 
 ## Requirements
+
 - Python 3.7+
 - NumPy
 
@@ -101,6 +104,7 @@ pip install numpy
 ```
 
 ## Run
+
 From the workspace root run:
 
 ```bash
@@ -108,13 +112,22 @@ python "numpy/day2.py"
 ```
 
 ## What the script does (high level)
+
 - Creates several arrays and prints them
 - Shows multiple slicing examples on a 1D array
 - Demonstrates extracting rows, columns, and submatrices from a 2D array
 
 ## Key slicing examples used in `day2.py`
 
+- `arr[start:stop]` — slice a contiguous range (stop is exclusive)
+- `arr[start:]` — slice from `start` to the end
+- `arr[-k:]` — last `k` elements
+- `arr[::step]` — take every `step`-th element
+- `arr[::-1]` — reverse the array
+- `arr2d[row_indices, col_indices]` — 2D array row/column selection
+
 ## Sample output
+
 (The script prints each result in order; approximate output below)
 
 ```
@@ -134,3 +147,46 @@ python "numpy/day2.py"
  [5 6]]
 ```
 
+---
+
+## Day 3 — NumPy Views, Copies, Math, and Reshape
+
+`day3.py` explores NumPy array views and copies, elementwise math, absolute values, reversal, and reshaping.
+
+### Summary
+
+`day3.py` includes:
+
+- Creating a 1D integer array with `np.arange()`
+- Demonstrating `view()` vs `copy()` behavior
+- Using `np.sqrt()`, `np.max()`, `np.min()`, `np.abs()`, and array reversal
+- Reshaping a 1D array into a 2D matrix with `.reshape()`
+
+### Run
+
+From the workspace root run:
+
+```bash
+python "numpy/day3.py"
+```
+
+### What the script does
+
+- Creates an array from odd values using `np.arange(1, 12, 2)`
+- Creates a view and a copy from the same source array
+- Shows the effect of modifying the original array on the view but not on the copy
+- Computes the square root, maximum, and minimum of a constant array
+- Reverses a range array, takes the absolute value, and reshapes a 1D array into 2 rows by 3 columns
+
+### Sample output
+
+```
+[41  3  5  7  9 11]
+[1 5 7 8 9 11]
+[16. 16. 16. 16. 16. 16.]
+16
+16
+[15 13 11  9  7  3]
+[[ 1  5  7]
+ [ 8  9 11]]
+```
