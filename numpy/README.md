@@ -1,6 +1,6 @@
-# NumPy — Day 1 through Day 5
+# NumPy — Day 1 through Day 6
 
-This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, `day4.py`, and `day5.py` in the `numpy` folder.
+This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, `day4.py`, `day5.py`, and `day6.py` in the `numpy` folder.
 
 ---
 
@@ -263,4 +263,48 @@ python "numpy/day5.py"
 ```
 [ 1  2  3  4  5  6  7  8  9 10  3]
 [0 2 4 6 8 10]
+```
+
+---
+
+## Day 6 — NumPy Sorting and Order
+
+`day6.py` demonstrates sorting of numeric, string, and boolean arrays, plus descending order sorting using slicing.
+
+### Summary
+`day6.py` includes:
+
+- Sorting a numeric array with `np.sort()`
+- Sorting a string array alphabetically with `np.sort()`
+- Sorting a boolean array with `np.sort()`
+- Preserving the original array while sorting and reversing the sorted result for descending order
+
+### Run
+From the workspace root run:
+
+```bash
+python "numpy/day6.py"
+```
+
+### What the script does
+
+- Creates a numeric array and prints it
+- Sorts the numeric array and prints the sorted result without modifying the original
+- Creates a string array and sorts it alphabetically
+- Creates a boolean array and sorts it
+- Prints the original numeric array again, showing it is unchanged
+- Prints the numeric array sorted in descending order using slicing
+
+### Sample output
+
+```
+[6 7 4 9 0 2 1]
+[0 1 2 4 6 7 9]
+['John' 'Tina' 'Aaron' 'Zed']
+['Aaron' 'John' 'Tina' 'Zed']
+[ True False False  True]
+[False False  True  True]
+[6 7 4 9 0 2 1]
+[0 1 2 4 6 7 9]
+[9 7 6 4 2 1 0]
 ```
