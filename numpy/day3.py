@@ -1,0 +1,18 @@
+import numpy as np
+array=np.arange(1,12,2)
+print(array)
+array1=array.view()
+array2=array.copy()
+array[0]=41
+print(array1)
+print(array2)
+arr=np.full(10,16)
+print(np.sqrt(arr))
+print(np.max(arr))
+print(np.min(arr))
+arr=np.arange(-3,15,2)
+print(np.abs(arr[::-1]))
+New_array=np.array([1,5,7,8,9,11])
+print(New_array)
+New_array=New_array.reshape(2,3)
+print(New_array)
