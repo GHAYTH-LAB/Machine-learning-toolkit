@@ -1,5 +1,4 @@
 import numpy as np
-
 # Filtering Numpy Arrays With Boolean Index Lists
 np1 = np.array([1,2,3,4,5,6,7,8,9,10])
 filtered = []
@@ -12,7 +11,6 @@ print(np1)
 print(filtered)
 new = np1[filtered]
 print(new)
-
 # Shortcut!
 filtered = np1 % 2 == 0
 print(np1)
