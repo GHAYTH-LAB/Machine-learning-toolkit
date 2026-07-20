@@ -272,6 +272,4 @@ python "numpy/day7.py"
 
 ## Where I learned
 
-- Playlist: [NumPy tutorial playlist](https://youtube.com/playlist?list=PLCC34OHNcOtpalASMlX2HHdsLNipyyhbK&si=z2IYHM3CvY9O2CVg)
-
-- [![NumPy playlist thumbnail](https://img.youtube.com/vi/gnKbAAVUzro/hqdefault.jpg)](https://youtube.com/playlist?list=PLCC34OHNcOtpalASMlX2HHdsLNipyyhbK&si=z2IYHM3CvY9O2CVg)
+[![NumPy tutorial playlist](https://img.youtube.com/vi/gnKbAAVUzro/hqdefault.jpg)](https://youtube.com/playlist?list=PLCC34OHNcOtpalASMlX2HHdsLNipyyhbK&si=z2IYHM3CvY9O2CVg)
