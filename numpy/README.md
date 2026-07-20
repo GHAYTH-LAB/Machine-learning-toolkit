@@ -1,6 +1,6 @@
-# NumPy — Day 1 through Day 4
+# NumPy — Day 1 through Day 5
 
-This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, and `day4.py` in the `numpy` folder.
+This README documents the examples and notes for `day1.py`, `day2.py`, `day3.py`, `day4.py`, and `day5.py` in the `numpy` folder.
 
 ---
 
@@ -230,4 +230,37 @@ python "numpy/day4.py"
 [[1 3 5]
  [2 4 6]]
 1/3/5/2/4/6/
+```
+
+---
+
+## Day 5 — NumPy Searching and Conditional Selection
+
+`day5.py` shows how to search arrays and select elements based on conditions using `np.where()`.
+
+### Summary
+`day5.py` includes:
+
+- Creating a 1D NumPy array with `np.array()`
+- Searching for values with `np.where()`
+- Selecting odd elements using a modulo condition
+
+### Run
+From the workspace root run:
+
+```bash
+python "numpy/day5.py"
+```
+
+### What the script does
+
+- Creates a 1D array with repeated values
+- Uses `np.where(np1 % 2 == 1)` to locate odd elements
+- Prints the original array and the matching indices for odd values
+
+### Sample output
+
+```
+[ 1  2  3  4  5  6  7  8  9 10  3]
+[0 2 4 6 8 10]
 ```
