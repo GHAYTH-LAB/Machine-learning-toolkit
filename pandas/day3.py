@@ -13,8 +13,6 @@ df.index=["First_employee","Second_employee","Third_employee"]
 print(df)
 #adding New Column named married
 df["married"]=[0,1,0]
-print(df)
-print("---------------------")
 #printing the row that contains Second employee label
 print(df.loc["Second_employee"])
 print("---------------------")

@@ -1,3 +1,4 @@
+#first steps into ml
 """from sklearn.datasets import load_diabetes
 X,y= load_diabetes(return_X_y=True)
 print(X,y)
@@ -55,6 +56,7 @@ model=RandomForestRegressor(random_state=42,
 model.fit(X_train,y_train)
 predictions=model.predict(X_test)
 print(mean_squared_error(y_test,predictions))
+<<<<<<< HEAD
 print(r2_score(y_test,predictions))"""
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
@@ -73,3 +75,4 @@ print("accuracy=",accuracy_score(y_test,predictions)
       ,"\n precision=",precision_score(y_test,predictions,average="weighted")
       ,"\n recall=",recall_score(y_test,predictions,average="weighted")
       ,"\n f1=",f1_score(y_test,predictions,average="weighted"))
+print(r2_score(y_test,predictions))
