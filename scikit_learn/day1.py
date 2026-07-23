@@ -1,3 +1,4 @@
+#first steps into ml
 """from sklearn.datasets import load_diabetes
 X,y= load_diabetes(return_X_y=True)
 print(X,y)
