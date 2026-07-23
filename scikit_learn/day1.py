@@ -37,7 +37,7 @@ model.fit(X_train,y_train)
 predictions=model.predict(X_test)
 accuracy=accuracy_score(y_test,predictions)
 print(accuracy)"""
-from sklearn.datasets import load_diabetes
+"""from sklearn.datasets import load_diabetes
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error,r2_score
@@ -55,4 +55,21 @@ model=RandomForestRegressor(random_state=42,
 model.fit(X_train,y_train)
 predictions=model.predict(X_test)
 print(mean_squared_error(y_test,predictions))
-print(r2_score(y_test,predictions))
+print(r2_score(y_test,predictions))"""
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
+from sklearn.preprocessing import StandardScaler
+X,y=load_digits(return_X_y=True)
+X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=42,test_size=0.2)
+scaler=StandardScaler()
+X_train=scaler.fit_transform(X_train)
+X_test=scaler.transform(X_test)
+model=KNeighborsClassifier()
+model.fit(X_train,y_train)
+predictions=model.predict(X_test)
+print("accuracy=",accuracy_score(y_test,predictions)
+      ,"\n precision=",precision_score(y_test,predictions,average="weighted")
+      ,"\n recall=",recall_score(y_test,predictions,average="weighted")
+      ,"\n f1=",f1_score(y_test,predictions,average="weighted"))
