@@ -1,8 +1,10 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split,GridSearchCV
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier,VotingClassifier
 from sklearn.preprocessing import OneHotEncoder,QuantileTransformer,LabelEncoder
+from xgboost import XGBClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score,recall_score,f1_score
 # data handling and cleaning
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\train_titanic_classification.csv")
@@ -43,6 +45,9 @@ df1=df1.fillna({
 df1["ticket_number"] = df1["ticket"].str.extract(r'(\d+)')
 df1=df1.drop(columns=["cabin","name","ticket"])
 df1["ticket_number"]=df1["ticket_number"].astype(int)
+df1=df1.fillna({
+    "fare":df["fare"].median()
+})
 y_train=df["survived"]
 X_train=df.drop(columns=["survived","passengerid"])
 X_test=df1.drop(columns="passengerid")
@@ -56,13 +61,22 @@ X_train_num=scaler.fit_transform(X_train[columns_num])
 X_test_num=scaler.transform(X_test[columns_num])
 X_train=np.hstack([X_train_cat,X_train_num])
 X_test=np.hstack([X_test_cat,X_test_num])
+voting=VotingClassifier(
+    estimators=[
+        ("rf",RandomForestClassifier(random_state=42))
+        ,("knn",KNeighborsClassifier())
+        ,("xg",XGBClassifier(random_state=42))
+    ]
+)
 grid=GridSearchCV(
-    estimator=RandomForestClassifier(random_state=42)
+    estimator=voting
     ,param_grid={
-        "n_estimators":[150,200,250,300]
-        ,"max_depth":[None,5,7,10,15]
-        ,"min_samples_leaf":[5,10,15]
-        ,"min_samples_split":[10,15]   
+    "rf__n_estimators":[150,250],
+    "rf__max_depth":[None,5,7,10],
+    "rf__min_samples_leaf":[5,10],
+    "knn__n_neighbors":[5,7],
+    "xg__n_estimators":[150,200],
+    "xg__learning_rate":[0.05,0.1]
     }
     ,cv=5
     ,n_jobs=-1
