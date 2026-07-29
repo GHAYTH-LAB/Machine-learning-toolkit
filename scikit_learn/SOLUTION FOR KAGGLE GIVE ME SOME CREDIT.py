@@ -1,4 +1,4 @@
-#"Give me some credit" kaggle competition
+#"Give me some credit" kaggle competition final submission
 #after fine tuning the model I improved the scores based on competition metrics from Score: 0.86613 public score:0.85995 to Score: 0.86631 public score 0.86053
 #Importing the necessary libraries 
 import pandas as pd
