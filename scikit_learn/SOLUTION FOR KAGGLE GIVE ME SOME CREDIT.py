@@ -67,13 +67,13 @@ voting=VotingClassifier(
 Grid=GridSearchCV(
     estimator=voting
     ,param_grid={
-    "cat__n_estimators":[300,500],
-    "cat__learning_rate":[0.05],
-    "cat__depth":[6,8],
-    "Lgbm__n_estimators":[300],
+    "cat__n_estimators":[300,350],
+    "cat__learning_rate":[0.05,0.1],
+    "cat__depth":[6,8,7],
+    "Lgbm__n_estimators":[300,350],
     "Lgbm__num_leaves":[31,63],
     "rf__n_estimators":[300],
-    "rf__max_depth":[10]
+    "rf__max_depth":[10,None]
     }
     ,scoring="roc_auc"
     ,cv=5
