@@ -11,7 +11,6 @@ df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\train
 df1=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\test Santander Customer Satisfaction.csv")
 #changing the standard params for displaying all the columns
 pd.set_option('display.max_info_columns', 400)
-print(df.corr()["TARGET"].to_string())
 #standarize the columns names
 for d in [df,df1]:
     d.columns=(d.columns
