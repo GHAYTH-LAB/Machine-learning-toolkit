@@ -33,7 +33,7 @@ for d in [df,df1]:
     d["range"]=d[num_cols].max(axis=1)-d[num_cols].min(axis=1)
 for d in [df,df1]:
     for col in num_cols:
-        d[f"{col} ratio"]=d[col]/d[num_cols].sum(axis=1)
+        d[f"{col} ratio"]=d[col]/(d[num_cols].sum(axis=1)+ 1e-6)
 id_extracted=df1["id"]
 y_train=df["target"]
 X_train=df.drop(columns=["id","target"])
@@ -43,9 +43,9 @@ X_train=scaler.fit_transform(X_train)
 X_test=scaler.transform(X_test)
 voting=VotingClassifier(
     estimators=[
-        ("cat",CatBoostClassifier(random_state=42,auto_class_weights="Balanced"))
-        ,("lgbm",LGBMClassifier(random_state=42,class_weight="balanced"))
-        ,("xg",XGBClassifier(random_state=42,scale_pos_weight="balanced"))
+        ("cat",CatBoostClassifier(random_state=42,auto_class_weights="Balanced",verbose=False))
+        ,("lgbm",LGBMClassifier(random_state=42,class_weight="balanced",verbosity=-1))
+        ,("xg",XGBClassifier(random_state=42))
     ]
     ,voting="soft"
 )
@@ -67,7 +67,7 @@ Grid=GridSearchCV(
 Grid.fit(X_train,y_train)
 predictions=Grid.predict_proba(X_test)
 print(Grid.best_params_)
-print("best log loss score:",Grid.best_params_)
+print("best log loss score:",abs(Grid.best_score_))
 submission=pd.DataFrame({
     "id":id_extracted
     ,"Class_1":predictions[:,0]
