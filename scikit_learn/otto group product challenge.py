@@ -57,7 +57,7 @@ Grid=GridSearchCV(
         ,"cat__learning_rate":[0.05,0.1]
         ,"lgbm__n_estimators":[350,400]
         ,"lgbm__learning_rate":[0.05]
-        ,"xg__n_estimators":[300,350]
+        ,"xg__n_estimators":[350]
         ,"xg__learning_rate":[0.05,0.1]
     }
     ,cv=cv_modified
