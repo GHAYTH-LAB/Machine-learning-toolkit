@@ -1,3 +1,5 @@
+#Submission Number 1 for otto group product Kaggle problem with log loss(evaluation metric)=: 0.49302 (Maybe i will fine tune it again later!!!!!!!!)
+#Importing the necessary libraries
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import GridSearchCV,StratifiedKFold
@@ -9,11 +11,6 @@ from sklearn.preprocessing import QuantileTransformer
 from sklearn.metrics import log_loss
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\otto group train.csv")
 df1=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\otto group test.csv")
-print(df.head())
-print(df.tail())
-print(df.info())
-print(df.columns)
-print(df.describe())
 for d in [df,df1]:
     d.columns=(d.columns
                .str.lower()
