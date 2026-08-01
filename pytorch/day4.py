@@ -25,7 +25,6 @@ class neuralnetwork(nn.Module):
         self.fc2=nn.Linear(64,32)
         self.fc3=nn.Linear(32,16)
         self.fc4=nn.Linear(16,1)
-
     def forward(self,x):
         x=F.relu(self.fc1(x))
         x=F.relu(self.fc2(x))
