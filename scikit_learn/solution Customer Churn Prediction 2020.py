@@ -1,4 +1,4 @@
-#My solution for kaggle Customer Churn Prediction 2020
+#My solution for kaggle Customer Churn Prediction 2020 btw I achieved 0.98222 score (waiting for fine tuning)
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import GridSearchCV,StratifiedKFold
@@ -11,17 +11,11 @@ from sklearn.preprocessing import OneHotEncoder,QuantileTransformer
 from sklearn.metrics import accuracy_score
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\train Customer Churn Prediction 2020.csv")
 df1=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\test Customer Churn Prediction 2020.csv")
-print(df.shape)
-print(df.isna().sum())
-print(df.duplicated().sum())
 for d in [df,df1]:
     d.columns=(d.columns
                .str.lower()
                .str.strip()
                .str.replace("_"," "))
-print(df.info())
-print(df.columns)
-print(df["state"].nunique())
 x=df["account length"].median()
 for d in [df,df1]:
     d["account length above median"]=(d["account length"]>x).astype(int)
@@ -50,8 +44,7 @@ for d in [df,df1]:
     d["intl call duration"]=np.where(d["total intl calls"]==0,0,d["total intl minutes"]/d["total intl calls"])
     d["intl plan low usage"] = ((d["international plan"]==1) & (d["total intl calls"]<=2)).astype(int)
     d["intl plan x charge"] = d["international plan"] * d["total intl charge"]
-print(df["international plan"])
-print(df["voice mail plan"])
+
 y_train=df["churn"]
 X_train=df.drop(columns="churn")
 X_test=df1
@@ -70,7 +63,6 @@ voting=VotingClassifier(
         ("cat",CatBoostClassifier(random_state=42))
         ,("xg",XGBClassifier(random_state=42))
         ,("lgbm",LGBMClassifier(random_state=42))
-        ,("knn",KNeighborsClassifier())
     ]
     ,voting="hard"
 )
@@ -85,7 +77,6 @@ Grid=GridSearchCV(
         ,"xg__learning_rate":[0.05,0.1]
         ,"lgbm__n_estimators":[250,300]
         ,"lgbm__num_leaves":[15,31]
-        ,"knn__n_neighbors":[5,3]
     }
     ,scoring="accuracy"
     ,cv=custome_cv
