@@ -5,11 +5,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import TensorDataset,DataLoader
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import QuantileTransformer
+from sklearn.preprocessing import MinMaxScaler
 device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
+torch.manual_seed(42)
 df=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\train Forest Cover Type Prediction.csv")
 df1=pd.read_csv(r"C:\Users\abidli\Desktop\Machine learning toolkit\datasets\test Forest Cover Type Prediction.csv")
+#Data cleaning and preprocessing
 for d in [df,df1]:
     d.columns=(d.columns
                .str.lower()
@@ -38,43 +39,42 @@ for d in [df,df1]:
     d["elevation minus_water"] = (d["elevation"] -d["vertical distance to hydrology"])
 y_train=df["cover type"]
 X_train=df.drop(columns=["cover type","id"])
-X_train,X_test,y_train,y_test=train_test_split(X_train,y_train,test_size=0.2,random_state=42)
 id_extracted=df1["id"]
-scaler=QuantileTransformer()
+X_test=df1.drop(columns="id")
+scaler=MinMaxScaler()
 X_train=scaler.fit_transform(X_train)
 X_test=scaler.transform(X_test)
 X_train=torch.from_numpy(X_train).float().to(device)
 X_test=torch.from_numpy(X_test).float().to(device)
 y_train=torch.from_numpy(y_train.values-1).long().to(device)
-y_test=torch.from_numpy(y_test.values-1).long().to(device)
 train_dataset=TensorDataset(X_train,y_train)
-data_loader=DataLoader(train_dataset,batch_size=16,shuffle=True)
+data_loader=DataLoader(train_dataset,batch_size=32,shuffle=True)
 class NeuralNetwork(nn.Module):
     def __init__(self):
         super().__init__()
-        self.layer1=nn.Linear(X_train.shape[1],128)
-        self.layer2=nn.Linear(128,256)
-        self.layer3=nn.Linear(256,128)
-        self.layer4=nn.Linear(128,64)
-        self.layer5=nn.Linear(64,32)
-        self.layer6=nn.Linear(32,16)
-        self.layer7=nn.Linear(16,7)
+        self.layer1=nn.Linear(X_train.shape[1],32)
+        self.layer2=nn.Linear(32,128)
+        self.layer3=nn.Linear(128,64)
+        self.layer4=nn.Linear(64,32)
+        self.layer5=nn.Linear(32,16)
+        self.layer6=nn.Linear(16,7)
     def forward(self,x):
         x=F.relu(self.layer1(x))
         x=F.relu(self.layer2(x))
         x=F.relu(self.layer3(x))
-        x=F.relu(self.layer4(x))
-        x=F.leaky_relu(self.layer5(x))
-        x=F.relu(self.layer6(x))
-        x=F.softmax(self.layer7(x))
+        x=F.leaky_relu(self.layer4(x))
+        x=F.relu(self.layer5(x))
+        x=self.layer6(x)
         return x
 model=NeuralNetwork().to(device)
 criterion=nn.CrossEntropyLoss()
-optimizer=optim.Adam(model.parameters(),lr=0.002)
-epochs=300
+optimizer=optim.Adam(model.parameters(),lr=0.001)
+epochs=250
 for epoch in range(epochs):
     model.train()
     curr_loss=0.00
+    correct = 0
+    total = 0
     for x_batch,y_batch in data_loader:
         optimizer.zero_grad()
         predictions=model(x_batch)
@@ -82,33 +82,20 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
         curr_loss+=loss.item()
-    print(f"epoch {epoch+1} the loss is : {curr_loss/len(data_loader)}")
+        predicted_classes = torch.argmax(predictions, dim=1)
+        correct += (predicted_classes == y_batch).sum().item()
+        total += y_batch.size(0)
+    accuracy=correct/total
+    if ((epoch)%10==0):
+        print(f"epoch {epoch+1} the loss is= {curr_loss/len(data_loader)} , accuracy={accuracy} ")
 with torch.no_grad():
     model.eval()
     predictions=model(X_test)
-    loss=criterion(predictions,y_test)
-    predicted_classes = torch.argmax(predictions, dim=1)
-    accuracy = (predicted_classes == y_test).float().mean()
-    print("Loss:", loss.item())
-    print("Accuracy:", accuracy.item())
-# Prepare the Kaggle test dataset
-X_submission = df1.drop(columns=["id"])
-# Use the scaler fitted on the training data
-X_submission = scaler.transform(X_submission)
-# Convert to tensor and move to the same device as the model
-X_submission = torch.from_numpy(X_submission).float().to(device)
-# Make predictions
-model.eval()
-with torch.no_grad():
-    predictions = model(X_submission)
-    # Get the class with the highest logit
-    predicted_classes = torch.argmax(predictions, dim=1)
-# We changed the original classes from 1-7 to 0-6
-predicted_classes = predicted_classes + 1
-predicted_classes = predicted_classes.cpu().numpy()
-# Create Kaggle submission
-submission = pd.DataFrame({
-    "id": df1["id"],
-    "cover type": predicted_classes
-})
-submission.to_csv("submission.csv", index=False)
+    predicted_class=torch.argmax(predictions,dim=1)
+predicted_class+=1
+predicted_class=predicted_class.cpu().numpy()
+submission=pd.DataFrame({
+    "Id":id_extracted
+    ,"Cover_Type":predicted_class
+})    
+submission.to_csv("NN version submission.csv",index=False)
