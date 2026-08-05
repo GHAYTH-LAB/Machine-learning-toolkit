@@ -1,1 +1,7 @@
 datasets/
+
+# Generated visualisation and Kaggle submission files
+/random_forest_visualisation.py
+/*submission*.csv
+/*Submission*.csv
+/predictions.csv
