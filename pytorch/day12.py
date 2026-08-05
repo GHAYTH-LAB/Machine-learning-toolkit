@@ -57,7 +57,7 @@ class NeuralNetwork(nn.Module):
         return x
 model=NeuralNetwork()
 criterion=nn.CrossEntropyLoss()
-optimizer=optim.Adam(model.parameters(),lr=0.002)
+optimizer=optim.Adam(model.parameters(),lr=0.001)
 epochs=200
 for epoch in range(epochs):
     model.train()
