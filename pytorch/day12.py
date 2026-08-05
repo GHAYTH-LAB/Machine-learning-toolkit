@@ -66,7 +66,7 @@ class NeuralNetwork(nn.Module):
 model=NeuralNetwork()
 criterion=nn.MSELoss()
 optimizer=optim.Adam(model.parameters(),lr=0.005)
-epochs=150
+epochs=200
 for epoch in range(epochs):
     model.train()
     curr_loss=0.00
