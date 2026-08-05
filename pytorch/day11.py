@@ -54,7 +54,7 @@ class NeuralNetwork(nn.Module):
 model=NeuralNetwork().to(device)
 criterion=nn.BCELoss()
 optimizer=optim.Adam(model.parameters(),lr=0.002)
-epochs=150
+epochs=200
 for epoch in range(epochs):
     model.train()
     curr_loss=0.00
