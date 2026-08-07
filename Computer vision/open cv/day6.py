@@ -32,6 +32,7 @@ cv2.destroyAllWindows()
 img_converted=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
 cv2.imshow("changed the colorspace",img_converted)
 cv2.waitKey(0)
+
 img2_converted=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 cv2.imshow("GRAYSCALE",img2_converted)
 cv2.waitKey(0)
