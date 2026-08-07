@@ -15,3 +15,5 @@ while ret:
     if ret:
         cv2.imshow("Suiiiiiiiiii",frame)
         cv2.waitKey(int(1000/fps))
+vid.release()
+cv2.destroyAllWindows()
