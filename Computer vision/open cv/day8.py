@@ -22,6 +22,7 @@ image_cropped=image[230:255,23:25]
 cv2.line(image,(255,29),(201,340),(0,255,0),3)
 cv2.imshow("Image",image)
 cv2.waitKey(0)
+#Drawing with opencv
 cv2.line(image,(33,34),(331,226),3)
 cv2.imshow("Image + line",image)
 cv2.waitKey(0)
