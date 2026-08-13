@@ -25,7 +25,7 @@ Machine learning toolkit/
 │   └── README.md
 │
 ├── pytorch/               # Deep-learning practice with PyTorch
-│   ├── day1.py ... day12.py
+│   ├── day1.py ... day17.py
 │   └── README.md          # Day-by-day PyTorch learning journey
 │
 ├── datasets/              # Local datasets used by the scripts (Git-ignored)
